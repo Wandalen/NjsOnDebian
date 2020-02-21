@@ -2,9 +2,9 @@
 
 FROM debian:stable
 
-whoami
-which curl
-which node
+RUN whoami
+RUN which curl
+RUN which node
 
 RUN sudo apt-get update
 RUN sudo apt-get install curl
