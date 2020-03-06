@@ -9,6 +9,13 @@ RUN whoami
 RUN apt-get update
 RUN apt-get install curl -y
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+RUN echo $PATH
+
+source ~/.bashrc
+
+RUN echo $PATH
+
 RUN nvm install --lts # install latest
 
 RUN node -v
