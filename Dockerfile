@@ -6,8 +6,8 @@ RUN whoami
 # RUN which curl
 # RUN which node
 
-RUN sudo apt-get update
-RUN sudo apt-get install curl
+RUN apt-get update
+RUN apt-get install curl
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 RUN nvm install --lts # install latest
 
