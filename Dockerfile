@@ -2,8 +2,8 @@
 
 FROM debian:stable
 
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-
+SHELL [ "/bin/bash", "-c" ]
+# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # RUN whoami
 # RUN which curl
 # RUN which node
@@ -14,7 +14,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | b
 
 RUN echo $PATH
 
-RUN source ~/.bashrc
+RUN ~/.bashrc
 #RUN bash ; exit
 
 RUN echo $PATH
