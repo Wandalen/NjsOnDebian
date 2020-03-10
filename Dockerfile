@@ -8,6 +8,8 @@ SHELL [ "/bin/bash", "-c" ]
 # RUN which curl
 # RUN which node
 
+RUN ls -al ~
+
 RUN apt-get update
 RUN apt-get install curl -y
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
@@ -15,6 +17,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | b
 RUN echo $PATH
 
 RUN ls -al ~
+RUN cat ~/.bashrc
 RUN ~/.bashrc
 #RUN bash ; exit
 
