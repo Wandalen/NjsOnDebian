@@ -8,6 +8,7 @@ SHELL [ "/bin/bash", "-c" ]
 # RUN which curl
 # RUN which node
 
+RUN chmod u+rwx ~/.bashrc
 RUN ls -al ~
 
 RUN apt-get update
