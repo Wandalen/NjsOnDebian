@@ -1,33 +1,17 @@
-# docker build .
+# docker build -t njsondebian .
+# docker run -it -rm njsondebian "node path/to/script arg"
 
 FROM debian:stable
 
-SHELL [ "/bin/bash", "-c" ]
-# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-# RUN whoami
-# RUN which curl
-# RUN which node
-
-RUN chmod u+rwx ~/.bashrc
-RUN ls -al ~
+SHELL [ "/bin/bash", "-l", "-c" ]
 
 RUN apt-get update
 RUN apt-get install curl -y
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
-RUN echo $PATH
+RUN  nvm install --lts
 
-RUN ls -al ~
-RUN cat ~/.bashrc
-RUN ~/.bashrc
-#RUN bash ; exit
-
-RUN echo $PATH
-
-RUN nvm install --lts # install latest
-
-RUN node -v
-RUN npm -v
+ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
 
 EXPOSE 8080
-CMD [ "sh" ]
+CMD [ "bash" ]
