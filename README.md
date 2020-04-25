@@ -6,5 +6,5 @@ Development environment for automation
 # Build
 docker build -t njsondebian .
 # Run
-docker run -it -rm njsondebian "node path/to/script arg"
+docker run -it --rm njsondebian "node path/to/script arg"
 ```
